@@ -23,6 +23,21 @@
 			body {
 				font-family: 'Inter', sans-serif;
 			}
+
+			@media print {
+				.container {
+					padding: 0 4%;
+				}
+				h2 {
+					break-after: avoid;
+					page-break-after: avoid;
+				}
+				figure {
+					margin: 12px 0;
+					break-inside: avoid;
+					page-break-inside: avoid;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -93,11 +108,9 @@
 
 		<h2>Task 3: Transforms</h2>
 		<p><b>Implementation.</b> I implemented translate, scale, and rotate as 3&times;3 matrices in homogeneous coordinates, using the 2D transformation matrices from Lecture 4 (Transforms, "2D Transformations (homogenous coordinates)" slide). A 2D point \((x, y)\) is written as \((x, y, 1)\), which lets translation be a matrix multiplication just like scale and rotation:</p>
-		<p style="text-align: center;">
-			\( T(t_x, t_y) = \begin{pmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{pmatrix} \quad
-			S(s_x, s_y) = \begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix} \quad
-			R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix} \)
-		</p>
+		<p style="text-align: center;">\( T(t_x, t_y) = \begin{pmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{pmatrix} \)</p>
+		<p style="text-align: center;">\( S(s_x, s_y) = \begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix} \)</p>
+		<p style="text-align: center;">\( R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix} \)</p>
 		<p>SVG gives rotation angles in degrees, so I convert to radians before taking the sine and cosine.</p>
 
 		<p><b>My robot.</b> My cubeman is waving hello. Starting from <code>robot.svg</code>, I made these changes in <code>my_robot.svg</code>:</p>
