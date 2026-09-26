@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <texture filename="assets/campanile-ryan-schwark.png" texid="campanile"/>
+  <textri texid="campanile" uvs="0 0 1 0 0 1" points="170 120 330 120 60 410"/>
+  <textri texid="campanile" uvs="1 0 1 1 0 1" points="330 120 440 410 60 410"/>
+</svg>
